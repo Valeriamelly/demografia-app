@@ -1,9 +1,10 @@
 import openpyxl
 from fuzzywuzzy import fuzz, process
 import sys
+import os
 
 # Ruta del archivo Excel
-excel_file = 'src/app/backend/Demografia.xlsx'
+excel_file = os.path.join(os.path.dirname(__file__), 'Demografia.xlsx')
 
 # Función para combinar los encabezados
 def combinar_encabezados(sheet):
@@ -101,4 +102,4 @@ if __name__ == "__main__":
     if respuesta is not None:
         print(respuesta)
     else:
-        print("Lo siento, no encontre informacion relacionada con esa pregunta.")
+        print("Lo siento, no encontré información relacionada con esa pregunta.")
